@@ -1,0 +1,16 @@
+version: '3'
+services:
+  proxy:
+    build: ./HAProxy
+    container_name: HArp
+    network_mode: host
+    ports:
+      - 80:80
+      - 433:433
+      - 8080:8080
+
+  webapp:
+    build: ./PersWeb
+    container_name: personal-website
+    ports:
+      - 8080:8080
